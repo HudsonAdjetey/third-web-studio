@@ -47,6 +47,7 @@ header {
     inset-inline: 0;
     top: 0;
     width: 100%;
+    z-index: 9000;
 }
 
 body {
@@ -56,14 +57,27 @@ body {
 }
 
 .mb-nav {
-    display: none;
+    display: flex;
     width: 100%;
-    background-color: #000;
+    background-color: black;
     position: fixed;
-    top: 5rem;
+    top: 0rem;
     bottom: 0;
     inset-inline: 0;
+    padding: 6rem;
+    transform: translateY(90%);
+    opacity: 0;
+    transition: all 0.5s;
 
+    @media screen and (max-width: 969px) {
+        padding: 4rem;
+    }
+
+}
+
+.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
@@ -117,10 +131,28 @@ body {
     align-items: center;
     width: 100%;
     padding: 2rem;
+    position: relative;
 
     & h1 {
         font-size: clamp(3rem, 6vw, 4rem);
         margin-bottom: 1rem;
+    }
+
+    & .x-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 2.5rem;
+        cursor: pointer;
+        background: var(--fade-white);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 50%;
+        transform-origin: left top;
+        transition: background 0.3s ease;
+        transform: rotate(90deg);
+        cursor: pointer;
+        font-weight: 300;
     }
 
     & h2 {
@@ -641,7 +673,7 @@ body {
     }
 
     .mb-nav {
-        display: none;
+        display: block;
     }
 
     .hero-content h2 {
