@@ -537,6 +537,96 @@ body {
 }
 
 
+/* About Users */
+.about_users {
+    padding: 6rem;
+
+    @media screen and (max-width: 969px) {
+        padding: 4rem;
+    }
+}
+
+.about_usersContainer {
+    display: flex;
+    gap: 4rem;
+    justify-content: space-between;
+
+    @media screen and (max-width: 969px) {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.about_img1 {
+    flex-basis: 50%
+}
+
+.about_img2 {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    span:last-child {
+        position: absolute;
+        z-index: -1;
+        left: 20%;
+        width: 70%;
+        display: flex;
+        bottom: 5%;
+
+        @media screen and (max-width:969px) {
+            left: 40%;
+            bottom: -20%;
+            display: none;
+
+        }
+
+        & img {
+            width: 250px;
+            max-width: fit-content;
+        }
+    }
+}
+
+.about_desc {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    article {
+        line-height: 1.6;
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 3.8rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+    }
+
+    .about_link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-block: 1rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+
+    & span {
+        img {
+            width: 60%;
+            min-width: max-content;
+        }
+    }
+}
+
 @media (pointer: coarse) {
     button:hover {
         background-color: transparent;
